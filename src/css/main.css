@@ -1,0 +1,26 @@
+@import "tailwindcss" layer(theme);
+@custom-variant dark (&:where(.dark, [data-theme=dark], .dark *));
+
+/* Custom dark mode transition */
+*, ::before, ::after {
+  transition-property: background-color, border-color, color;
+  transition-duration: 200ms;
+  transition-timing-function: ease-in-out;
+}
+
+/* Custom animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+

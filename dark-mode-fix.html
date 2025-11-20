@@ -1,0 +1,76 @@
+<!-- Ukázka testování dark mode -->
+<!DOCTYPE html>
+<html lang="cs" id="test-dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Dark Mode</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        /* Dark mode CSS */
+        .dark { color-scheme: dark; }
+        
+        body {
+            background: white;
+            color: black;
+            transition: background 0.3s, color 0.3s;
+        }
+        
+        .dark body {
+            background: #111827;
+            color: white;
+        }
+        
+        .test-box {
+            padding: 2rem;
+            margin: 2rem;
+            border: 2px solid black;
+        }
+        
+        .dark .test-box {
+            border-color: white;
+            background: #1f2937;
+        }
+    </style>
+    <script>
+        (function() {
+            const darkMode = localStorage.getItem('darkMode') === 'true';
+            if (darkMode) {
+                document.documentElement.classList.add('dark');
+            }
+        })();
+    </script>
+</head>
+<body>
+    <div class="test-box">
+        <h1>Dark Mode Test</h1>
+        <p>Pokud je dark mode aktivní, pozadí bude tmavé.</p>
+        <button onclick="testToggle()">Toggle Dark Mode</button>
+        <p id="status"></p>
+    </div>
+    
+    <script>
+        function testToggle() {
+            const html = document.documentElement;
+            const isDark = html.classList.contains('dark');
+            
+            if (isDark) {
+                html.classList.remove('dark');
+                localStorage.setItem('darkMode', 'false');
+            } else {
+                html.classList.add('dark');
+                localStorage.setItem('darkMode', 'true');
+            }
+            
+            document.getElementById('status').textContent = 
+                'Dark mode: ' + (html.classList.contains('dark') ? 'ZAPNUTO' : 'VYPNUTO');
+        }
+        
+        // Show initial status
+        document.getElementById('status').textContent = 
+            'Dark mode: ' + (document.documentElement.classList.contains('dark') ? 'ZAPNUTO' : 'VYPNUTO');
+    </script>
+</body>
+</html>
+

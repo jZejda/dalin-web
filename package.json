@@ -1,0 +1,19 @@
+{
+  "name": "dalin-website",
+  "version": "1.0.0",
+  "description": "Statický web Dalin s landing page",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.1",
+    "alpinejs": "^3.15",
+    "vite": "^7.2"
+  },
+  "dependencies": {
+    "lucide-static": "^0.548.0"
+  }
+}

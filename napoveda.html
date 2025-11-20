@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Nápověda pro Dalin">
+    <title>Nápověda | Dalin</title>
+    <link rel="stylesheet" href="/src/css/main.css">
+    <script>
+        (function() {
+            const darkMode = localStorage.getItem('darkMode') === 'true';
+            if (darkMode) {
+                document.documentElement.classList.add('dark');
+            }
+        })();
+    </script>
+    <script type="module" src="/src/js/main.js"></script>
+</head>
+<body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-200" x-data="{ darkMode: localStorage.getItem('darkMode') === 'true' }" x-init="if (darkMode) document.documentElement.classList.add('dark'); else document.documentElement.classList.remove('dark')">
+    
+    <!-- Navigation -->
+    <nav class="bg-white dark:bg-gray-800 shadow-md transition-colors duration-200" x-data="{ mobileMenuOpen: false }">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <a href="index.html" class="text-2xl font-bold text-indigo-600 dark:text-indigo-400">
+                    Dalin
+                </a>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-6">
+                    <a href="index.html" class="hover:text-indigo-600 dark:hover:text-indigo-400">Domů</a>
+                    <a href="o-projektu.html" class="hover:text-indigo-600 dark:hover:text-indigo-400">O projektu</a>
+                    <a href="napoveda.html" class="text-indigo-600 dark:text-indigo-400 font-semibold">Nápověda</a>
+                    <a href="kontakt.html" class="hover:text-indigo-600 dark:hover:text-indigo-400">Kontakt</a>
+                </div>
+
+                <div class="flex items-center space-x-4">
+                    <button 
+                        @click="darkMode = !darkMode; localStorage.setItem('darkMode', darkMode); darkMode ? document.documentElement.classList.add('dark') : document.documentElement.classList.remove('dark')"
+                        class="p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+                    >
+                        <span x-show="!darkMode" class="text-2xl">🌙</span>
+                        <span x-show="darkMode" class="text-2xl">☀️</span>
+                    </button>
+                    
+                    <button 
+                        @click="mobileMenuOpen = !mobileMenuOpen"
+                        class="md:hidden p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700"
+                    >
+                        <span x-show="!mobileMenuOpen" class="text-2xl">☰</span>
+                        <span x-show="mobileMenuOpen" class="text-2xl">✕</span>
+                    </button>
+                </div>
+            </div>
+            
+            <div x-show="mobileMenuOpen" x-collapse class="md:hidden mt-4 space-y-2">
+                <a href="index.html" class="block py-2 hover:text-indigo-600 dark:hover:text-indigo-400">Domů</a>
+                <a href="o-projektu.html" class="block py-2 hover:text-indigo-600 dark:hover:text-indigo-400">O projektu</a>
+                <a href="napoveda.html" class="block py-2 text-indigo-600 dark:text-indigo-400 font-semibold">Nápověda</a>
+                <a href="kontakt.html" class="block py-2 hover:text-indigo-600 dark:hover:text-indigo-400">Kontakt</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Content -->
+    <main class="py-12 px-4">
+        <div class="container mx-auto max-w-4xl">
+            <h1 class="text-4xl font-bold mb-6 text-indigo-600 dark:text-indigo-400">Nápověda</h1>
+            
+            <div class="space-y-6" x-data="{ openAccordion: null }">
+                <!-- FAQ 1 -->
+                <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg">
+                    <button 
+                        @click="openAccordion = openAccordion === 1 ? null : 1"
+                        class="w-full flex justify-between items-center p-4 text-left hover:bg-gray-50 dark:hover:bg-gray-700 rounded-lg transition-colors"
+                    >
+                        <span class="font-semibold">Jak přepnout na dark mode?</span>
+                        <span x-show="openAccordion !== 1">▶</span>
+                        <span x-show="openAccordion === 1" class="rotate-90">▶</span>
+                    </button>
+                    <div x-show="openAccordion === 1" x-collapse class="p-4 text-gray-600 dark:text-gray-300">
+                        <p>Klikněte na ikonu měsíce/slunce v pravém horním rohu navigace. Dark mode se automaticky uloží do vašeho prohlížeče.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg">
+                    <button 
+                        @click="openAccordion = openAccordion === 2 ? null : 2"
+                        class="w-full flex justify-between items-center p-4 text-left hover:bg-gray-50 dark:hover:bg-gray-700 rounded-lg transition-colors"
+                    >
+                        <span class="font-semibold">Je web responzivní?</span>
+                        <span x-show="openAccordion !== 2">▶</span>
+                        <span x-show="openAccordion === 2" class="rotate-90">▶</span>
+                    </button>
+                    <div x-show="openAccordion === 2" x-collapse class="p-4 text-gray-600 dark:text-gray-300">
+                        <p>Ano, web je plně responzivní a přizpůsobuje se různým velikostem obrazovek od mobilních zařízení po desktop.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg">
+                    <button 
+                        @click="openAccordion = openAccordion === 3 ? null : 3"
+                        class="w-full flex justify-between items-center p-4 text-left hover:bg-gray-50 dark:hover:bg-gray-700 rounded-lg transition-colors"
+                    >
+                        <span class="font-semibold">Jak mohu kontaktovat tým?</span>
+                        <span x-show="openAccordion !== 3">▶</span>
+                        <span x-show="openAccordion === 3" class="rotate-90">▶</span>
+                    </button>
+                    <div x-show="openAccordion === 3" x-collapse class="p-4 text-gray-600 dark:text-gray-300">
+                        <p>Použijte kontaktní formulář na stránce Kontakt. Vyplňte požadované údaje a odešlete zprávu.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 4 -->
+                <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg">
+                    <button 
+                        @click="openAccordion = openAccordion === 4 ? null : 4"
+                        class="w-full flex justify-between items-center p-4 text-left hover:bg-gray-50 dark:hover:bg-gray-700 rounded-lg transition-colors"
+                    >
+                        <span class="font-semibold">Jaké jsou používané technologie?</span>
+                        <span x-show="openAccordion !== 4">▶</span>
+                        <span x-show="openAccordion === 4" class="rotate-90">▶</span>
+                    </button>
+                    <div x-show="openAccordion === 4" x-collapse class="p-4 text-gray-600 dark:text-gray-300">
+                        <p>Projekt využívá Vite pro build, Tailwind CSS v4 pro styling, Alpine.js pro interaktivitu a PHP pro zpracování formulářů.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 dark:bg-gray-900 text-gray-300 py-8 px-4">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2024 Dalin. Všechna práva vyhrazena.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
+
