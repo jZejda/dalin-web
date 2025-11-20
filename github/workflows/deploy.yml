@@ -26,4 +26,4 @@ jobs:
 
       - name: Deploy via rsync
         run: |
-          sshpass -p "${{ secrets.SSH_USER_PASSWORD }}" rsync -av -e "ssh -o StrictHostKeyChecking=no -p 20001" ./dist/ ${{ secrets.SSH_USER_NAME }}@${{ secrets.SSH_SERVER_NAME }}:/home/html/multi_731459/dalin.cz/public_public_html
+          sshpass -p "${{ secrets.SSH_USER_PASSWORD }}" rsync -av -e "ssh -o StrictHostKeyChecking=no -p 20001" ./dist/ ${{ secrets.SSH_USER_NAME }}@${{ secrets.SSH_SERVER_NAME }}:/home/html/multi_731459/dalin.cz/public_html
