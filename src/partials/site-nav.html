@@ -1,0 +1,140 @@
+<nav
+  class="bg-white dark:bg-gray-800 shadow-md transition-colors duration-200 border-b border-zinc-200 dark:border-zinc-700"
+  x-data="{ mobileMenuOpen: false }"
+>
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-4">
+    <div class="flex justify-between items-center">
+      <a
+        href="index.html"
+        class="inline-flex items-center gap-2 text-2xl font-bold text-brand hover:opacity-85 dark:text-brand-foreground dark:hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/55 focus-visible:ring-offset-2 dark:focus-visible:ring-brand-foreground/50 dark:focus-visible:ring-offset-gray-800 rounded-md"
+      >
+        <svg
+          class="size-8 shrink-0"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <path d="M3 2v1c0 1 2 1 2 2S3 6 3 7s2 1 2 2-2 1-2 2 2 1 2 2" />
+          <path d="M18 6h.01" />
+          <path d="M6 18h.01" />
+          <path d="M20.83 8.83a4 4 0 0 0-5.66-5.66l-12 12a4 4 0 1 0 5.66 5.66Z" />
+          <path d="M18 11.66V22a4 4 0 0 0 4-4V6" />
+        </svg>
+        Dalin
+      </a>
+
+      <div class="hidden md:flex items-center gap-6">
+        <a href="index.html"__A_HOME__ class="__C_HOME__">Domů</a>
+        <a href="oprojektu.html"__A_OPROJEKTU__ class="__C_OPROJEKTU__">O projektu</a>
+        <a href="napoveda.html"__A_NAPOVEDA__ class="__C_NAPOVEDA__">Nápověda</a>
+        <a href="kontakt.html"__A_KONTAKT__ class="__C_KONTAKT__">Kontakt</a>
+      </div>
+
+      <div class="flex items-center gap-2 sm:gap-4">
+        <button
+          type="button"
+          @click="darkMode = !darkMode; localStorage.setItem('darkMode', darkMode); darkMode ? document.documentElement.classList.add('dark') : document.documentElement.classList.remove('dark')"
+          class="p-2 rounded-lg text-brand hover:opacity-85 dark:text-brand-foreground dark:hover:opacity-90 hover:bg-zinc-200/80 dark:hover:bg-zinc-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/55 focus-visible:ring-offset-2 dark:focus-visible:ring-brand-foreground/50 dark:focus-visible:ring-offset-gray-800"
+          aria-label="Přepnout světlý nebo tmavý režim"
+        >
+          <svg
+            x-show="darkMode"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="size-6"
+            aria-hidden="true"
+          >
+            <circle cx="12" cy="12" r="4" />
+            <path d="M12 2v2" />
+            <path d="M12 20v2" />
+            <path d="m4.93 4.93 1.41 1.41" />
+            <path d="m17.66 17.66 1.41 1.41" />
+            <path d="M2 12h2" />
+            <path d="M20 12h2" />
+            <path d="m6.34 17.66-1.41 1.41" />
+            <path d="m19.07 4.93-1.41 1.41" />
+          </svg>
+          <svg
+            x-show="!darkMode"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="size-6"
+            aria-hidden="true"
+          >
+            <path
+              d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"
+            />
+          </svg>
+        </button>
+
+        <button
+          type="button"
+          @click="mobileMenuOpen = !mobileMenuOpen"
+          class="md:hidden p-2 rounded-lg text-brand hover:opacity-85 dark:text-brand-foreground dark:hover:opacity-90 hover:bg-zinc-200/80 dark:hover:bg-zinc-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/55 focus-visible:ring-offset-2 dark:focus-visible:ring-brand-foreground/50 dark:focus-visible:ring-offset-gray-800"
+          x-bind:aria-expanded="mobileMenuOpen"
+          aria-controls="site-mobile-nav"
+          aria-label="Menu"
+        >
+          <svg
+            x-show="!mobileMenuOpen"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="size-6"
+            aria-hidden="true"
+          >
+            <path d="M4 5h16" />
+            <path d="M4 12h16" />
+            <path d="M4 19h16" />
+          </svg>
+          <svg
+            x-show="mobileMenuOpen"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="size-6"
+            aria-hidden="true"
+          >
+            <path d="M18 6 6 18" />
+            <path d="m6 6 12 12" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div
+      id="site-mobile-nav"
+      x-show="mobileMenuOpen"
+      x-collapse
+      class="md:hidden mt-4 space-y-2 border-t border-zinc-200 dark:border-zinc-700 pt-4"
+    >
+      <a href="index.html"__A_HOME__ class="block py-2 __C_HOME__">Domů</a>
+      <a href="oprojektu.html"__A_OPROJEKTU__ class="block py-2 __C_OPROJEKTU__">O projektu</a>
+      <a href="napoveda.html"__A_NAPOVEDA__ class="block py-2 __C_NAPOVEDA__">Nápověda</a>
+      <a href="kontakt.html"__A_KONTAKT__ class="block py-2 __C_KONTAKT__">Kontakt</a>
+    </div>
+  </div>
+</nav>

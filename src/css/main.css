@@ -1,6 +1,12 @@
 @import "tailwindcss" layer(theme);
 @custom-variant dark (&:where(.dark, [data-theme=dark], .dark *));
 
+/* Dalin značkové barvy — viz .cursor/skills/modern-web-ui-tailwind */
+@theme {
+  --color-brand: #fdc700;
+  --color-brand-foreground: #fec300;
+}
+
 /* Custom dark mode transition */
 *, ::before, ::after {
   transition-property: background-color, border-color, color;

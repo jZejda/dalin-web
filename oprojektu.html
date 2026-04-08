@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="O projektu Dalin">
-    <title>O projektu | Dalin</title>
+    <meta name="description" content="DaLin: závody a ORIS, přihlášky, profily, finance, role, notifikace a exporty — přehled podle uživatelské dokumentace. Plus stručně o tomto promo webu.">
+    <title>O projektu | DaLin</title>
     <link rel="stylesheet" href="/src/css/main.css">
     <script>
         (function() {
@@ -18,101 +18,287 @@
 </head>
 <body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-200" x-data="{ darkMode: localStorage.getItem('darkMode') === 'true' }" x-init="if (darkMode) document.documentElement.classList.add('dark'); else document.documentElement.classList.remove('dark')">
     
-    <!-- Navigation -->
-    <nav class="bg-white dark:bg-gray-800 shadow-md transition-colors duration-200" x-data="{ mobileMenuOpen: false }">
-        <div class="container mx-auto px-4 py-4">
-            <div class="flex justify-between items-center">
-                <a href="index.html" class="text-2xl font-bold text-indigo-600 dark:text-indigo-400">
-                    Dalin
-                </a>
-                
-                <!-- Desktop Menu -->
-                <div class="hidden md:flex space-x-6">
-                    <a href="index.html" class="hover:text-indigo-600 dark:hover:text-indigo-400">Domů</a>
-                    <a href="o-projektu.html" class="text-indigo-600 dark:text-indigo-400 font-semibold">O projektu</a>
-                    <a href="napoveda.html" class="hover:text-indigo-600 dark:hover:text-indigo-400">Nápověda</a>
-                    <a href="kontakt.html" class="hover:text-indigo-600 dark:hover:text-indigo-400">Kontakt</a>
-                </div>
-
-                <div class="flex items-center space-x-4">
-                    <button 
-                        @click="darkMode = !darkMode; localStorage.setItem('darkMode', darkMode); darkMode ? document.documentElement.classList.add('dark') : document.documentElement.classList.remove('dark')"
-                        class="p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
-                    >
-                        <span x-show="!darkMode" class="text-2xl">🌙</span>
-                        <span x-show="darkMode" class="text-2xl">☀️</span>
-                    </button>
-                    
-                    <button 
-                        @click="mobileMenuOpen = !mobileMenuOpen"
-                        class="md:hidden p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700"
-                    >
-                        <span x-show="!mobileMenuOpen" class="text-2xl">☰</span>
-                        <span x-show="mobileMenuOpen" class="text-2xl">✕</span>
-                    </button>
-                </div>
-            </div>
-            
-            <div x-show="mobileMenuOpen" x-collapse class="md:hidden mt-4 space-y-2">
-                <a href="index.html" class="block py-2 hover:text-indigo-600 dark:hover:text-indigo-400">Domů</a>
-                <a href="o-projektu.html" class="block py-2 text-indigo-600 dark:text-indigo-400 font-semibold">O projektu</a>
-                <a href="napoveda.html" class="block py-2 hover:text-indigo-600 dark:hover:text-indigo-400">Nápověda</a>
-                <a href="kontakt.html" class="block py-2 hover:text-indigo-600 dark:hover:text-indigo-400">Kontakt</a>
-            </div>
-        </div>
-    </nav>
+    <!-- SITE_NAV:oprojektu -->
 
     <!-- Content -->
     <main class="py-12 px-4">
-        <div class="container mx-auto max-w-4xl">
-            <h1 class="text-4xl font-bold mb-6 text-indigo-600 dark:text-indigo-400">O projektu</h1>
-            
-            <div class="prose dark:prose-invert max-w-none">
-                <p class="text-lg mb-6 text-gray-600 dark:text-gray-300">
-                    Dalin je moderní projekt vytvořený s využitím nejnovějších webových technologií. 
-                    Zaměřuje se na poskytování rychlého a responzivního uživatelského zážitku s podporou 
-                    dark mode a přizpůsobivým designem.
+        <div class="container mx-auto max-w-4xl space-y-10">
+            <header class="space-y-4">
+                <p class="inline-flex items-center rounded-full bg-brand/15 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-zinc-800 ring-1 ring-inset ring-brand/35 dark:bg-brand/10 dark:text-brand-foreground dark:ring-brand-foreground/30">
+                    DaLin · produkt
                 </p>
-                
-                <h2 class="text-2xl font-semibold mt-8 mb-4">Technologie</h2>
-                <ul class="list-disc list-inside space-y-2 mb-6">
-                    <li class="text-gray-700 dark:text-gray-300">Vite - rychlý build tool</li>
-                    <li class="text-gray-700 dark:text-gray-300">Tailwind CSS v4 - utility-first CSS framework</li>
-                    <li class="text-gray-700 dark:text-gray-300">Alpine.js - lightweight JavaScript framework</li>
-                    <li class="text-gray-700 dark:text-gray-300">PHP - backendové zpracování formulářů</li>
-                </ul>
-                
-                <h2 class="text-2xl font-semibold mt-8 mb-4">Hlavní rysy</h2>
-                <div class="space-y-4 mb-8">
-                    <div class="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg">
-                        <h3 class="font-semibold mb-2">Responzivní design</h3>
-                        <p class="text-gray-600 dark:text-gray-300">
-                            Web je plně responzivní a adaptuje se na všechny velikosti obrazovek.
-                        </p>
-                    </div>
-                    <div class="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg">
-                        <h3 class="font-semibold mb-2">Dark mode</h3>
-                        <p class="text-gray-600 dark:text-gray-300">
-                            Automatické přepínání mezi světlým a tmavým režimem podle preference uživatele.
-                        </p>
-                    </div>
-                    <div class="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg">
-                        <h3 class="font-semibold mb-2">Rychlé načítání</h3>
-                        <p class="text-gray-600 dark:text-gray-300">
-                            Optimalizované assety zajišťují rychlé načítání stránky.
-                        </p>
-                    </div>
+                <h1 class="text-4xl font-bold tracking-tight text-brand dark:text-brand-foreground">O projektu</h1>
+                <div class="max-w-3xl space-y-4 text-base leading-relaxed text-zinc-600 dark:text-zinc-300">
+                    <p class="text-lg text-zinc-700 dark:text-zinc-200">
+                        <strong class="font-semibold text-zinc-900 dark:text-white">DaLin</strong> je aplikace na správu klubu orientačních sportů —
+                        taková administrace, která ví, že „závod“ není jen slovo v kalendáři, ale taky přihlášky, finance,
+                        e-maily a občas i počasí, které si nikdo neobjednal.
+                    </p>
+                    <p>
+                        Propojuje se s <strong class="font-semibold text-zinc-800 dark:text-zinc-100">ORISem</strong>, umí rozúčtovat akce, stahovat platby z klubového účtu,
+                        posílat upozornění a exportovat data tam na potřebná místa.
+                        Cílem je ubrat vedení oddílu co nejvíc ruční práce — a přidat přehled všem, kdo jen chce běhat a neřešit administrativu.
+                    </p>
                 </div>
+            </header>
+
+            <section
+                class="scroll-mt-8 rounded-2xl border border-zinc-200/90 bg-white p-6 shadow-sm ring-1 ring-zinc-900/5 dark:border-zinc-700/80 dark:bg-zinc-900/40 dark:ring-white/5 sm:p-8"
+                aria-labelledby="o-shrnuti"
+            >
+                <div class="mb-6 flex flex-col gap-3 border-b border-zinc-200/90 pb-5 dark:border-zinc-700/80 sm:flex-row sm:items-center sm:justify-between">
+                    <h2 id="o-shrnuti" class="text-2xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-50">
+                        Krátce a výstižně
+                    </h2>
+                    <span
+                        class="inline-flex w-fit shrink-0 items-center rounded-full bg-amber-50 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-amber-900 ring-1 ring-inset ring-amber-600/20 dark:bg-amber-400/10 dark:text-amber-200 dark:ring-amber-400/30"
+                        >Shrnutí</span
+                    >
+                </div>
+                <ul class="list-none space-y-4 pl-0">
+                    <li class="flex gap-3 text-zinc-700 dark:text-zinc-300">
+                        <svg class="size-5 shrink-0 text-amber-500 dark:text-amber-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M14.106 5.553a2 2 0 0 0 1.788 0l3.659-1.83A1 1 0 0 1 21 4.619v12.764a1 1 0 0 1-.553.894l-4.553 2.277a2 2 0 0 1-1.788 0l-4.212-2.106a2 2 0 0 0-1.788 0l-3.659 1.83A1 1 0 0 1 3 19.381V6.618a1 1 0 0 1 .553-.894l4.553-2.277a2 2 0 0 1 1.788 0z" />
+                            <path d="M15 5.764v15" />
+                            <path d="M9 3.236v15" />
+                        </svg>
+                        <span><strong class="font-semibold text-zinc-900 dark:text-zinc-100">Švýcarský nožík pro oddíl:</strong> závody, přihlášky, profily, finance — pod jednou střechou, ne pod deseti odkazy v chatu nebo e-mailu.</span>
+                    </li>
+                    <li class="flex gap-3 text-zinc-700 dark:text-zinc-300">
+                        <svg class="size-5 shrink-0 text-amber-500 dark:text-amber-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M12 8V4H8" />
+                            <rect width="16" height="12" x="4" y="8" rx="2" />
+                            <path d="M2 14h2" />
+                            <path d="M20 14h2" />
+                            <path d="M15 13v2" />
+                            <path d="M9 13v2" />
+                        </svg>
+                        <span><strong class="font-semibold text-zinc-900 dark:text-zinc-100">Automatizace, která neusíná:</strong> spoustu věcí si systém stáhne a zkontroluje sám; vy řešíte sport.</span>
+                    </li>
+                    <li class="flex gap-3 text-zinc-700 dark:text-zinc-300">
+                        <svg class="size-5 shrink-0 text-amber-500 dark:text-amber-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M11 6a13 13 0 0 0 8.4-2.8A1 1 0 0 1 21 4v12a1 1 0 0 1-1.6.8A13 13 0 0 0 11 14H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2z" />
+                            <path d="M6 14a12 12 0 0 0 2.4 7.2 2 2 0 0 0 3.2-2.4A8 8 0 0 1 10 14" />
+                            <path d="M8 6v8" />
+                        </svg>
+                        <span><strong class="font-semibold text-zinc-900 dark:text-zinc-100">Komunikace navenek i dovnitř:</strong> členové dostanou souhrny a upozornění — místo aby se novinky hledaly mezi třemi vlákny a jedním zapomenutým PDF.</span>
+                    </li>
+                    <li class="flex gap-3 text-zinc-700 dark:text-zinc-300">
+                        <svg class="size-5 shrink-0 text-amber-500 dark:text-amber-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <rect x="3" y="8" width="18" height="4" rx="1" />
+                            <path d="M12 8v13" />
+                            <path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7" />
+                            <path d="M7.5 8a2.5 2.5 0 0 1 0-5A4.8 8 0 0 1 12 8a4.8 8 0 0 1 4.5-5 2.5 2.5 0 0 1 0 5" />
+                        </svg>
+                        <span><strong class="font-semibold text-zinc-900 dark:text-zinc-100">Open source:</strong> svobodná licence, rozšiřitelná architektura, moduly se dají vypínat — aby každý klub měl jen to, co opravdu používá.</span>
+                    </li>
+                </ul>
+            </section>
+
+            <div
+                class="rounded-xl border border-brand/35 bg-brand/10 p-4 text-sm leading-relaxed text-zinc-800 dark:border-brand-foreground/25 dark:bg-brand/5 dark:text-zinc-100"
+                role="note"
+            >
+                <p class="mb-0">
+                    Níže je souhrn toho, <strong class="font-semibold text-zinc-900 dark:text-white">co systém skutečně umí</strong> — podle stejné nápovědy jako na
+                    <a href="https://docs.dalin.cz/napoveda/" class="rounded-sm font-semibold text-brand underline decoration-brand/45 underline-offset-2 hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/55 focus-visible:ring-offset-2 dark:text-brand-foreground dark:hover:text-brand-foreground/90 dark:focus-visible:ring-brand-foreground/50 dark:focus-visible:ring-offset-zinc-900">docs.dalin.cz/napoveda</a>.
+                    Na odkazu je přehledná dokumentace ke každé obrazovce.
+                </p>
+            </div>
+
+            <section
+                class="scroll-mt-8 rounded-2xl border border-zinc-200/90 bg-white p-6 shadow-sm ring-1 ring-zinc-900/5 dark:border-zinc-700/80 dark:bg-zinc-900/40 dark:ring-white/5 sm:p-8"
+                aria-labelledby="o-smysl"
+            >
+                <div class="mb-6 flex flex-col gap-3 border-b border-zinc-200/90 pb-5 dark:border-zinc-700/80 sm:flex-row sm:items-center sm:justify-between">
+                    <h2 id="o-smysl" class="text-2xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-50">Smysl a princip</h2>
+                    <span
+                        class="inline-flex w-fit shrink-0 items-center rounded-full bg-brand/15 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-zinc-900 ring-1 ring-inset ring-brand/30 dark:bg-brand/10 dark:text-brand-foreground dark:ring-brand-foreground/35"
+                        >Mise</span
+                    >
+                </div>
+                <div class="space-y-4 leading-relaxed text-zinc-600 dark:text-zinc-300">
+                    <p class="mb-0">
+                        Hlavní mise je <strong class="font-semibold text-zinc-900 dark:text-zinc-100">zjednodušit život „orienťákům“</strong>: dát lidem nástroj tak,
+                        aby mohli vyřešit sami to, co mohou ovlivnit — přihlášky, platby, údaje, přehled závodů —
+                        a opakující rutinu nechat strojům. Co si mohu udělat sám, není potřeba nikam delegovat.
+                    </p>
+                </div>
+            </section>
+
+            <section
+                class="scroll-mt-8 rounded-2xl border border-zinc-200/90 bg-white p-6 shadow-sm ring-1 ring-zinc-900/5 dark:border-zinc-700/80 dark:bg-zinc-900/40 dark:ring-white/5 sm:p-8"
+                aria-labelledby="o-zavody"
+            >
+                <div class="mb-6 flex flex-col gap-3 border-b border-zinc-200/90 pb-5 dark:border-zinc-700/80 sm:flex-row sm:items-center sm:justify-between">
+                    <h2 id="o-zavody" class="text-2xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-50">Závody a akce</h2>
+                    <span
+                        class="inline-flex w-fit shrink-0 items-center rounded-full bg-sky-50 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-sky-900 ring-1 ring-inset ring-sky-600/20 dark:bg-sky-400/10 dark:text-sky-200 dark:ring-sky-400/30"
+                        >Závody</span
+                    >
+                </div>
+                <div class="space-y-4 leading-relaxed text-zinc-600 dark:text-zinc-300">
+                    <p>
+                        Centrální je přehled <strong class="font-semibold text-zinc-900 dark:text-zinc-100">závodů a akcí</strong> klubu: nadcházející termíny, filtry v čase,
+                        u každé položky mimo jiného <strong class="font-semibold text-zinc-900 dark:text-zinc-100">oficiální i neoficiální název</strong>, místo, etapy, pořadatele, oblast, odkaz na <strong class="font-semibold text-zinc-900 dark:text-zinc-100">ORIS ID</strong>,
+                        počet přihlášených a <strong class="font-semibold text-zinc-900 dark:text-zinc-100">předpověď počasí</strong> (OpenWeather) na den konání.
+                        Termíny přihlášek jsou přehledné dlaždice — otevřené, brzy končící, po uzávěrce, včetně navýšení poplatků.
+                    </p>
+                    <p>
+                        <strong class="font-semibold text-zinc-900 dark:text-zinc-100">Správce závodů</strong> přidává závody <strong class="font-semibold text-zinc-900 dark:text-zinc-100">importem z ORISu</strong> (výběr sportu, regionu, data, vyhledání podle ID)
+                        nebo zakládá <strong class="font-semibold text-zinc-900 dark:text-zinc-100">vlastní akce mimo ORIS</strong> — oddílové závody, soustředění, tréninky. U závodů z ORISu se průběžně doplňují údaje z ORISu
+                        (kategorie, služby, body zájmu, odkazy, souřadnice…); u detailu jde část polí zamknout proti přepsání importem.
+                        <strong class="font-semibold text-zinc-900 dark:text-zinc-100">Detail závodu</strong> může obsahovat mapu s body zájmu, odkazy na ORIS, žurnál přihlášek a aktuality stažené z ORISu.
+                    </p>
+                    <p class="mb-0">
+                        Do Google kalendáře nebo jiného klienta jdou připojit <strong class="font-semibold text-zinc-900 dark:text-zinc-100">ICS feedy</strong> — samostatně závody a tréninky (adresy tvaru
+                        <code class="rounded-md bg-zinc-100 px-1.5 py-0.5 font-mono text-sm text-zinc-800 dark:bg-zinc-800 dark:text-zinc-200">/api/feed/kalendar/zavody/all/</code> a obdobně pro tréninky).
+                    </p>
+                </div>
+            </section>
+
+            <section
+                class="scroll-mt-8 rounded-2xl border border-zinc-200/90 bg-white p-6 shadow-sm ring-1 ring-zinc-900/5 dark:border-zinc-700/80 dark:bg-zinc-900/40 dark:ring-white/5 sm:p-8"
+                aria-labelledby="o-prihlasky"
+            >
+                <div class="mb-6 flex flex-col gap-3 border-b border-zinc-200/90 pb-5 dark:border-zinc-700/80 sm:flex-row sm:items-center sm:justify-between">
+                    <h2 id="o-prihlasky" class="text-2xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-50">Přihlášky a závodní profily</h2>
+                    <span
+                        class="inline-flex w-fit shrink-0 items-center rounded-full bg-violet-50 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-violet-900 ring-1 ring-inset ring-violet-600/20 dark:bg-violet-400/10 dark:text-violet-200 dark:ring-violet-400/30"
+                        >Přihlášky</span
+                    >
+                </div>
+                <div class="space-y-4 leading-relaxed text-zinc-600 dark:text-zinc-300">
+                    <p>
+                        K přihlášení na závod je potřeba <strong class="font-semibold text-zinc-900 dark:text-zinc-100">závodní profil</strong> s registračním číslem z klubu;
+                        pro přihlášky do závodů v ORISu i <strong class="font-semibold text-zinc-900 dark:text-zinc-100">ORIS ID</strong> závodníka. Jeden uživatel může spravovat více profilů (např. děti v oddíle).
+                        Profil zakládá správce; uživatel si pak typicky hlavně hlídá SI, licenci a souhlas s přihlašováním.
+                    </p>
+                    <p>
+                        U závodů z ORISu probíhá přihlášení <strong class="font-semibold text-zinc-900 dark:text-zinc-100">přes aplikaci do ORISu</strong> — výběr kategorie, etap, poznámek, požadavků na start, zapůjčení čipu.
+                        Existuje přehled <strong class="font-semibold text-zinc-900 dark:text-zinc-100">všech vlastních přihlášek</strong> včetně historie a stavu; na kartě závodu je <strong class="font-semibold text-zinc-900 dark:text-zinc-100">žurnál přihlášených</strong> a možnost odhlásit se
+                        (u ORIS závodů je dobré ověřit stav i přímo v ORISu).
+                    </p>
+                    <p class="mb-0">
+                        V <strong class="font-semibold text-zinc-900 dark:text-zinc-100">uživatelských nastaveních</strong> lze určit, <strong class="font-semibold text-zinc-900 dark:text-zinc-100">kdo jiný vás smí přihlašovat a odhlašovat</strong> (rodina, kamarád) — jejich řádky jsou v přehledech vizuálně odlišené.
+                        Člen si může vytvořit <strong class="font-semibold text-zinc-900 dark:text-zinc-100">vlastní záložky filtrů</strong> nad seznamem závodů (sport, typ akce, ikona) — např. jen OB bez tréninků.
+                    </p>
+                </div>
+            </section>
+
+            <section
+                class="scroll-mt-8 rounded-2xl border border-zinc-200/90 bg-white p-6 shadow-sm ring-1 ring-zinc-900/5 dark:border-zinc-700/80 dark:bg-zinc-900/40 dark:ring-white/5 sm:p-8"
+                aria-labelledby="o-finance"
+            >
+                <div class="mb-6 flex flex-col gap-3 border-b border-zinc-200/90 pb-5 dark:border-zinc-700/80 sm:flex-row sm:items-center sm:justify-between">
+                    <h2 id="o-finance" class="text-2xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-50">Finance</h2>
+                    <span
+                        class="inline-flex w-fit shrink-0 items-center rounded-full bg-emerald-50 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-emerald-900 ring-1 ring-inset ring-emerald-600/20 dark:bg-emerald-400/10 dark:text-emerald-200 dark:ring-emerald-400/30"
+                        >Finance</span
+                    >
+                </div>
+                <div class="space-y-4 leading-relaxed text-zinc-600 dark:text-zinc-300">
+                    <p>
+                        Členové vidí <strong class="font-semibold text-zinc-900 dark:text-zinc-100">osobní konto</strong>, historii transakcí, poznámky a údaje o platbách;
+                        v záhlaví stránky se generuje <strong class="font-semibold text-zinc-900 dark:text-zinc-100">QR platba</strong> s <strong class="font-semibold text-zinc-900 dark:text-zinc-100">variabilním symbolem</strong> odvozeným od registrace — platby se umí
+                        <strong class="font-semibold text-zinc-900 dark:text-zinc-100">automaticky spárovat</strong> i při doplnění nul bankou na deset znaků.
+                    </p>
+                    <p>
+                        <strong class="font-semibold text-zinc-900 dark:text-zinc-100">Finančník</strong> pracuje s rozšířenými operacemi: mimo jiné <strong class="font-semibold text-zinc-900 dark:text-zinc-100">bankovní výpis</strong> z propojených účtů
+                        (v dokumentaci jsou uvedeny např. <strong class="font-semibold text-zinc-900 dark:text-zinc-100">Fio banka</strong> a <strong class="font-semibold text-zinc-900 dark:text-zinc-100">Moneta</strong>) — párování položek s členy, ruční doplnění, popis transakcí.
+                        K dispozici je i <strong class="font-semibold text-zinc-900 dark:text-zinc-100">jednoduché cestovní vyrovnání</strong>: přesun částky mezi dvěma uživateli s poznámkou a volitelným odkazem na závod.
+                    </p>
+                    <p class="mb-0">
+                        Systém umí pravidelné e-maily pro finančníky — např. upozornění na záporná konta nebo na termíny plateb po uzávěrkách závodů (podle nápovědy a rolí).
+                    </p>
+                </div>
+            </section>
+
+            <section
+                class="scroll-mt-8 rounded-2xl border border-zinc-200/90 bg-white p-6 shadow-sm ring-1 ring-zinc-900/5 dark:border-zinc-700/80 dark:bg-zinc-900/40 dark:ring-white/5 sm:p-8"
+                aria-labelledby="o-role"
+            >
+                <div class="mb-6 flex flex-col gap-3 border-b border-zinc-200/90 pb-5 dark:border-zinc-700/80 sm:flex-row sm:items-center sm:justify-between">
+                    <h2 id="o-role" class="text-2xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-50">Lidé, role a obsah webu</h2>
+                    <span
+                        class="inline-flex w-fit shrink-0 items-center rounded-full bg-rose-50 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-rose-900 ring-1 ring-inset ring-rose-600/20 dark:bg-rose-400/10 dark:text-rose-200 dark:ring-rose-400/30"
+                        >Role</span
+                    >
+                </div>
+                <div class="space-y-4 leading-relaxed text-zinc-600 dark:text-zinc-300">
+                    <p>
+                        Práva jsou řízená <strong class="font-semibold text-zinc-900 dark:text-zinc-100">rolemi</strong> (lze je kombinovat): základ je <strong class="font-semibold text-zinc-900 dark:text-zinc-100">Člen</strong>;
+                        <strong class="font-semibold text-zinc-900 dark:text-zinc-100">Správce závodů</strong> zavádí a upravuje akce; <strong class="font-semibold text-zinc-900 dark:text-zinc-100">Organizátor</strong> může u konkrétních závodů přihlašovat kohokoli, posílat hromadné e-maily přihlášeným a exportovat seznam do XLSX;
+                        <strong class="font-semibold text-zinc-900 dark:text-zinc-100">Redaktor</strong> spravuje <strong class="font-semibold text-zinc-900 dark:text-zinc-100">novinky</strong> (veřejné i jen pro přihlášené) a <strong class="font-semibold text-zinc-900 dark:text-zinc-100">stránky</strong> s kategoriemi;
+                        <strong class="font-semibold text-zinc-900 dark:text-zinc-100">Finančník</strong>, <strong class="font-semibold text-zinc-900 dark:text-zinc-100">Admin klubu</strong> (uživatelé, registrace, klubová nastavení) a <strong class="font-semibold text-zinc-900 dark:text-zinc-100">Super administrátor</strong> bez omezení včetně experimentálních funkcí.
+                    </p>
+                    <p class="mb-0">
+                        Stránka <strong class="font-semibold text-zinc-900 dark:text-zinc-100">Registrace</strong> v klubu slouží k přehledu platných registrací a kontaktů mezi členy; vybrané role exportují seznamy do Excelu.
+                        Admin může zakládat uživatele, přidělovat role a k závodním profilům doplňovat údaje načtené z ORISu (lupa u registračního čísla).
+                    </p>
+                </div>
+            </section>
+
+            <section
+                class="scroll-mt-8 rounded-2xl border border-zinc-200/90 bg-white p-6 shadow-sm ring-1 ring-zinc-900/5 dark:border-zinc-700/80 dark:bg-zinc-900/40 dark:ring-white/5 sm:p-8"
+                aria-labelledby="o-ui"
+            >
+                <div class="mb-6 flex flex-col gap-3 border-b border-zinc-200/90 pb-5 dark:border-zinc-700/80 sm:flex-row sm:items-center sm:justify-between">
+                    <h2 id="o-ui" class="text-2xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-50">Rozhraní, notifikace a API</h2>
+                    <span
+                        class="inline-flex w-fit shrink-0 items-center rounded-full bg-cyan-50 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-cyan-900 ring-1 ring-inset ring-cyan-600/20 dark:bg-cyan-400/10 dark:text-cyan-200 dark:ring-cyan-400/30"
+                        >UI &amp; API</span
+                    >
+                </div>
+                <div class="space-y-4 leading-relaxed text-zinc-600 dark:text-zinc-300">
+                    <p>
+                        Aplikace je stavená jednotně: <strong class="font-semibold text-zinc-900 dark:text-zinc-100">horní lišta</strong> (sbalení menu, globální hledání v povolených entitách, zvonění notifikací, menu uživatele včetně dark módu),
+                        <strong class="font-semibold text-zinc-900 dark:text-zinc-100">levé menu</strong> podle oprávnění a <strong class="font-semibold text-zinc-900 dark:text-zinc-100">pravý panel notifikací</strong> (osobní, mazatelné).
+                        Tabulkové výpisy podporují <strong class="font-semibold text-zinc-900 dark:text-zinc-100">hledání, řazení, skládání filtrů, hromadné akce</strong> a stránkování.
+                    </p>
+                    <p>
+                        V nastavení e-mailů si člen nastaví <strong class="font-semibold text-zinc-900 dark:text-zinc-100">upozornění na novinky</strong>, <strong class="font-semibold text-zinc-900 dark:text-zinc-100">blížící se konec přihlášek</strong> (sport, dny dopředu, hodina)
+                        a <strong class="font-semibold text-zinc-900 dark:text-zinc-100">týdenní souhrn</strong> závodů s končícími přihláškami. Od verze 12 jde spravovat také <strong class="font-semibold text-zinc-900 dark:text-zinc-100">API klíč</strong> pro strojový přístup k veřejnému API (hlavička <code class="rounded-md bg-zinc-100 px-1.5 py-0.5 font-mono text-sm text-zinc-800 dark:bg-zinc-800 dark:text-zinc-200">x-apikey</code>).
+                    </p>
+                    <p class="mb-0">
+                        Organizátor závodu může z detailu závodu poslat <strong class="font-semibold text-zinc-900 dark:text-zinc-100">hromadný e-mail</strong> přihlášeným (předmět, odpovědní adresa, tělo v Markdownu).
+                    </p>
+                </div>
+            </section>
+
+            <section
+                class="scroll-mt-8 rounded-2xl border border-zinc-200/90 bg-white p-6 shadow-sm ring-1 ring-zinc-900/5 dark:border-zinc-700/80 dark:bg-zinc-900/40 dark:ring-white/5 sm:p-8"
+                aria-labelledby="o-data"
+            >
+                <div class="mb-6 flex flex-col gap-3 border-b border-zinc-200/90 pb-5 dark:border-zinc-700/80 sm:flex-row sm:items-center sm:justify-between">
+                    <h2 id="o-data" class="text-2xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-50">Automatizace a exporty</h2>
+                    <span
+                        class="inline-flex w-fit shrink-0 items-center rounded-full bg-zinc-100 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-zinc-800 ring-1 ring-inset ring-zinc-400/30 dark:bg-zinc-800 dark:text-zinc-200 dark:ring-zinc-500/40"
+                        >Data</span
+                    >
+                </div>
+                <ul class="list-disc space-y-2 pl-5 leading-relaxed text-zinc-600 marker:text-zinc-400 dark:text-zinc-300 dark:marker:text-zinc-500">
+                    <li>Průběžná synchronizace údajů závodů s <strong class="font-semibold text-zinc-900 dark:text-zinc-100">ORISem</strong> a na vyžádání řada dalších operací přes ORIS API.</li>
+                    <li>Stažení <strong class="font-semibold text-zinc-900 dark:text-zinc-100">počasí</strong> před akcí z OpenWeather.</li>
+                    <li>Export <strong class="font-semibold text-zinc-900 dark:text-zinc-100">seznamu členů</strong> a <strong class="font-semibold text-zinc-900 dark:text-zinc-100">přihlášených v závodě</strong> do XLSX; u závodu tlačítko exportu v záhlaví detailu.</li>
+                    <li>Plánovaný export závodu v <strong class="font-semibold text-zinc-900 dark:text-zinc-100">IOFv3</strong> pro jednodenní závod (v době psaní nápovědy v přípravě).</li>
+                </ul>
+            </section>
+
+            <div
+                class="rounded-xl border border-brand/35 bg-brand/10 p-4 text-sm leading-relaxed text-zinc-800 dark:border-brand-foreground/25 dark:bg-brand/5 dark:text-zinc-100"
+                role="note"
+            >
+                <p class="mb-0">
+                    Kompletní návody ke každé stránce: dokumentace na
+                    <a href="https://docs.dalin.cz/" class="rounded-sm font-semibold text-brand underline decoration-brand/45 underline-offset-2 hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/55 focus-visible:ring-offset-2 dark:text-brand-foreground dark:hover:text-brand-foreground/90 dark:focus-visible:ring-brand-foreground/50 dark:focus-visible:ring-offset-zinc-900">docs.dalin.cz</a>
+                    (sekce Nápověda, changelog, instalace včetně bankovního konektoru).
+                </p>
             </div>
         </div>
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-gray-800 dark:bg-gray-900 text-gray-300 py-8 px-4">
-        <div class="container mx-auto text-center">
-            <p>&copy; 2024 Dalin. Všechna práva vyhrazena.</p>
-        </div>
-    </footer>
+    <!-- SITE_FOOTER -->
 
 </body>
 </html>

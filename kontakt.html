@@ -18,54 +18,12 @@
 </head>
 <body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-200" x-data="{ darkMode: localStorage.getItem('darkMode') === 'true' }" x-init="if (darkMode) document.documentElement.classList.add('dark'); else document.documentElement.classList.remove('dark')">
     
-    <!-- Navigation -->
-    <nav class="bg-white dark:bg-gray-800 shadow-md transition-colors duration-200" x-data="{ mobileMenuOpen: false }">
-        <div class="container mx-auto px-4 py-4">
-            <div class="flex justify-between items-center">
-                <a href="index.html" class="text-2xl font-bold text-indigo-600 dark:text-indigo-400">
-                    Dalin
-                </a>
-                
-                <!-- Desktop Menu -->
-                <div class="hidden md:flex space-x-6">
-                    <a href="index.html" class="hover:text-indigo-600 dark:hover:text-indigo-400">Domů</a>
-                    <a href="o-projektu.html" class="hover:text-indigo-600 dark:hover:text-indigo-400">O projektu</a>
-                    <a href="napoveda.html" class="hover:text-indigo-600 dark:hover:text-indigo-400">Nápověda</a>
-                    <a href="kontakt.html" class="text-indigo-600 dark:text-indigo-400 font-semibold">Kontakt</a>
-                </div>
-
-                <div class="flex items-center space-x-4">
-                    <button 
-                        @click="darkMode = !darkMode; localStorage.setItem('darkMode', darkMode); darkMode ? document.documentElement.classList.add('dark') : document.documentElement.classList.remove('dark')"
-                        class="p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
-                    >
-                        <span x-show="!darkMode" class="text-2xl">🌙</span>
-                        <span x-show="darkMode" class="text-2xl">☀️</span>
-                    </button>
-                    
-                    <button 
-                        @click="mobileMenuOpen = !mobileMenuOpen"
-                        class="md:hidden p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700"
-                    >
-                        <span x-show="!mobileMenuOpen" class="text-2xl">☰</span>
-                        <span x-show="mobileMenuOpen" class="text-2xl">✕</span>
-                    </button>
-                </div>
-            </div>
-            
-            <div x-show="mobileMenuOpen" x-collapse class="md:hidden mt-4 space-y-2">
-                <a href="index.html" class="block py-2 hover:text-indigo-600 dark:hover:text-indigo-400">Domů</a>
-                <a href="o-projektu.html" class="block py-2 hover:text-indigo-600 dark:hover:text-indigo-400">O projektu</a>
-                <a href="napoveda.html" class="block py-2 hover:text-indigo-600 dark:hover:text-indigo-400">Nápověda</a>
-                <a href="kontakt.html" class="block py-2 text-indigo-600 dark:text-indigo-400 font-semibold">Kontakt</a>
-            </div>
-        </div>
-    </nav>
+    <!-- SITE_NAV:kontakt -->
 
     <!-- Content -->
     <main class="py-12 px-4">
         <div class="container mx-auto max-w-2xl">
-            <h1 class="text-4xl font-bold mb-6 text-indigo-600 dark:text-indigo-400">Kontaktujte nás</h1>
+            <h1 class="text-4xl font-bold mb-6 text-brand dark:text-brand-foreground">Kontaktujte nás</h1>
             
             <div class="bg-gray-50 dark:bg-gray-800 p-8 rounded-lg shadow-md">
                 <form action="/api/contact.php" method="POST" x-data="{ 
@@ -120,7 +78,7 @@
                             id="name" 
                             name="name" 
                             required
-                            class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100"
+                            class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-brand/60 focus:border-transparent dark:focus:ring-brand-foreground/50 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100"
                         >
                     </div>
                     
@@ -131,7 +89,7 @@
                             id="email" 
                             name="email" 
                             required
-                            class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100"
+                            class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-brand/60 focus:border-transparent dark:focus:ring-brand-foreground/50 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100"
                         >
                     </div>
                     
@@ -142,7 +100,7 @@
                             id="subject" 
                             name="subject" 
                             required
-                            class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100"
+                            class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-brand/60 focus:border-transparent dark:focus:ring-brand-foreground/50 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100"
                         >
                     </div>
                     
@@ -153,14 +111,14 @@
                             name="message" 
                             rows="5" 
                             required
-                            class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100"
+                            class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-brand/60 focus:border-transparent dark:focus:ring-brand-foreground/50 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100"
                         ></textarea>
                     </div>
                     
                     <button 
                         type="submit" 
                         x-bind:disabled="isSubmitting"
-                        class="w-full px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors disabled:bg-gray-400 disabled:cursor-not-allowed"
+                        class="w-full px-6 py-3 bg-brand text-zinc-900 font-semibold rounded-lg hover:bg-brand/90 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/70 focus-visible:ring-offset-2 dark:focus-visible:ring-brand-foreground/60 dark:focus-visible:ring-offset-gray-900 disabled:bg-gray-400 disabled:cursor-not-allowed disabled:text-gray-600"
                     >
                         <span x-show="!isSubmitting">Odeslat</span>
                         <span x-show="isSubmitting">Odesílání...</span>
@@ -170,12 +128,7 @@
         </div>
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-gray-800 dark:bg-gray-900 text-gray-300 py-8 px-4">
-        <div class="container mx-auto text-center">
-            <p>&copy; 2024 Dalin. Všechna práva vyhrazena.</p>
-        </div>
-    </footer>
+    <!-- SITE_FOOTER -->
 
 </body>
 </html>

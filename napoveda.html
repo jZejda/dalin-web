@@ -18,54 +18,12 @@
 </head>
 <body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-200" x-data="{ darkMode: localStorage.getItem('darkMode') === 'true' }" x-init="if (darkMode) document.documentElement.classList.add('dark'); else document.documentElement.classList.remove('dark')">
     
-    <!-- Navigation -->
-    <nav class="bg-white dark:bg-gray-800 shadow-md transition-colors duration-200" x-data="{ mobileMenuOpen: false }">
-        <div class="container mx-auto px-4 py-4">
-            <div class="flex justify-between items-center">
-                <a href="index.html" class="text-2xl font-bold text-indigo-600 dark:text-indigo-400">
-                    Dalin
-                </a>
-                
-                <!-- Desktop Menu -->
-                <div class="hidden md:flex space-x-6">
-                    <a href="index.html" class="hover:text-indigo-600 dark:hover:text-indigo-400">Domů</a>
-                    <a href="o-projektu.html" class="hover:text-indigo-600 dark:hover:text-indigo-400">O projektu</a>
-                    <a href="napoveda.html" class="text-indigo-600 dark:text-indigo-400 font-semibold">Nápověda</a>
-                    <a href="kontakt.html" class="hover:text-indigo-600 dark:hover:text-indigo-400">Kontakt</a>
-                </div>
-
-                <div class="flex items-center space-x-4">
-                    <button 
-                        @click="darkMode = !darkMode; localStorage.setItem('darkMode', darkMode); darkMode ? document.documentElement.classList.add('dark') : document.documentElement.classList.remove('dark')"
-                        class="p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
-                    >
-                        <span x-show="!darkMode" class="text-2xl">🌙</span>
-                        <span x-show="darkMode" class="text-2xl">☀️</span>
-                    </button>
-                    
-                    <button 
-                        @click="mobileMenuOpen = !mobileMenuOpen"
-                        class="md:hidden p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700"
-                    >
-                        <span x-show="!mobileMenuOpen" class="text-2xl">☰</span>
-                        <span x-show="mobileMenuOpen" class="text-2xl">✕</span>
-                    </button>
-                </div>
-            </div>
-            
-            <div x-show="mobileMenuOpen" x-collapse class="md:hidden mt-4 space-y-2">
-                <a href="index.html" class="block py-2 hover:text-indigo-600 dark:hover:text-indigo-400">Domů</a>
-                <a href="o-projektu.html" class="block py-2 hover:text-indigo-600 dark:hover:text-indigo-400">O projektu</a>
-                <a href="napoveda.html" class="block py-2 text-indigo-600 dark:text-indigo-400 font-semibold">Nápověda</a>
-                <a href="kontakt.html" class="block py-2 hover:text-indigo-600 dark:hover:text-indigo-400">Kontakt</a>
-            </div>
-        </div>
-    </nav>
+    <!-- SITE_NAV:napoveda -->
 
     <!-- Content -->
     <main class="py-12 px-4">
         <div class="container mx-auto max-w-4xl">
-            <h1 class="text-4xl font-bold mb-6 text-indigo-600 dark:text-indigo-400">Nápověda</h1>
+            <h1 class="text-4xl font-bold mb-6 text-brand dark:text-brand-foreground">Nápověda</h1>
             
             <div class="space-y-6" x-data="{ openAccordion: null }">
                 <!-- FAQ 1 -->
@@ -131,12 +89,7 @@
         </div>
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-gray-800 dark:bg-gray-900 text-gray-300 py-8 px-4">
-        <div class="container mx-auto text-center">
-            <p>&copy; 2024 Dalin. Všechna práva vyhrazena.</p>
-        </div>
-    </footer>
+    <!-- SITE_FOOTER -->
 
 </body>
 </html>

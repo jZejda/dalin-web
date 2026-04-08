@@ -1,0 +1,105 @@
+<footer class="border-t border-zinc-200 dark:border-zinc-700">
+  <div
+    class="mx-auto max-w-7xl px-6 py-8 lg:px-8 flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between"
+  >
+    <div class="flex flex-col gap-2 min-w-0">
+      <a
+        href="index.html"
+        class="inline-flex items-center gap-2 w-fit text-base font-semibold text-brand hover:opacity-85 dark:text-brand-foreground dark:hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/55 focus-visible:ring-offset-2 dark:focus-visible:ring-brand-foreground/50 dark:focus-visible:ring-offset-gray-900 rounded-md"
+      >
+        <svg
+          class="size-6 shrink-0"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <path d="M3 2v1c0 1 2 1 2 2S3 6 3 7s2 1 2 2-2 1-2 2 2 1 2 2" />
+          <path d="M18 6h.01" />
+          <path d="M6 18h.01" />
+          <path d="M20.83 8.83a4 4 0 0 0-5.66-5.66l-12 12a4 4 0 1 0 5.66 5.66Z" />
+          <path d="M18 11.66V22a4 4 0 0 0 4-4V6" />
+        </svg>
+        Dalin
+      </a>
+      <p class="text-sm text-zinc-500 dark:text-white/70">
+        © 2026 Dalin — Administrace pro vaše orientáky.
+      </p>
+    </div>
+    <div class="flex flex-wrap items-center gap-4 sm:gap-6">
+      <a
+        class="inline-flex text-brand hover:opacity-85 dark:text-brand-foreground dark:hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/55 focus-visible:ring-offset-2 dark:focus-visible:ring-brand-foreground/50 dark:focus-visible:ring-offset-gray-900 rounded-md p-1 -m-1"
+        href="https://kaas.gg/discord"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Komunita na Discordu"
+      >
+        <span class="sr-only">Discord</span>
+        <svg
+          class="size-6"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <path
+            d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719"
+          />
+        </svg>
+      </a>
+      <button
+        type="button"
+        @click="darkMode = !darkMode; localStorage.setItem('darkMode', darkMode); darkMode ? document.documentElement.classList.add('dark') : document.documentElement.classList.remove('dark')"
+        class="p-2 rounded-lg text-brand hover:opacity-85 dark:text-brand-foreground dark:hover:opacity-90 hover:bg-zinc-200/80 dark:hover:bg-zinc-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/55 focus-visible:ring-offset-2 dark:focus-visible:ring-brand-foreground/50 dark:focus-visible:ring-offset-gray-900"
+        aria-label="Přepnout světlý nebo tmavý režim"
+      >
+        <svg
+          x-show="darkMode"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="size-6"
+          aria-hidden="true"
+        >
+          <circle cx="12" cy="12" r="4" />
+          <path d="M12 2v2" />
+          <path d="M12 20v2" />
+          <path d="m4.93 4.93 1.41 1.41" />
+          <path d="m17.66 17.66 1.41 1.41" />
+          <path d="M2 12h2" />
+          <path d="M20 12h2" />
+          <path d="m6.34 17.66-1.41 1.41" />
+          <path d="m19.07 4.93-1.41 1.41" />
+        </svg>
+        <svg
+          x-show="!darkMode"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="size-6"
+          aria-hidden="true"
+        >
+          <path
+            d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"
+          />
+        </svg>
+      </button>
+    </div>
+  </div>
+</footer>
