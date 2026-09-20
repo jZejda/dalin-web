@@ -21,10 +21,9 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Build VitePress docs
+      - name: Build website
         run: npm run build
 
       - name: Deploy via rsync
         run: |
-          sshpass -p "${{ secrets.SSH_USER_PASSWORD }}" rsync -av -e "ssh -o StrictHostKeyChecking=no -p 20001" ./dist/ ${{ secrets.SSH_USER_NAME }}@${{ secrets.SSH_SERVER_NAME }}:/home/html/multi_731459/dalin.cz/public_html
-
+          sshpass -p "${{ secrets.SSH_USER_PASSWORD }}" rsync -av --delete --exclude='.htaccess' --exclude='.well-known/' -e "ssh -o StrictHostKeyChecking=no -p 20001" ./dist/ ${{ secrets.SSH_USER_NAME }}@${{ secrets.SSH_SERVER_NAME }}:/home/html/multi_731459/dalin.cz/public_html/

@@ -11,16 +11,25 @@ help () {
 Usage: run.sh COMMAND
 
 Commands:
-    img           Copy Imagest to server"
+    deploy        Build and synchronize the website
+    img           Synchronize source images"
 }
 
 case "$1" in
 
+    deploy)
+            echo "${BOLD}Run Build project ...${NORMAL}"
+            npm run build
+            echo "${BOLD}Copy DaLin page into production server...${NORMAL}"
+            cd dist/
+            rsync -av --delete --exclude='.htaccess' --exclude='.well-known/' -e 'ssh -p 20001' --progress . ssh-731459@dw303.webglobe.com:/home/html/multi_731459/dalin.cz/public_html/
+            cd ../../../
+            ;;
     img)
-        echo "${BOLD}Copy DaLin imagest to production server...${NORMAL}"
+        echo "${BOLD}Synchronize DaLin images to production server...${NORMAL}"
         cd images/
-        rsync -av -e 'ssh -p 20001' --progress . ssh-731459@dw303.webglobe.com:/home/html/multi_731459/dalin.cz/public_html/images
-/        cd ../
+        rsync -av --delete -e 'ssh -p 20001' --progress . ssh-731459@dw303.webglobe.com:/home/html/multi_731459/dalin.cz/public_html/images/
+        cd ../
         ;;
     help)
         help

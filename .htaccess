@@ -1,9 +1,4 @@
-# Apache konfigurace pro Dalin Website
-
-# Povoleno zpracování PHP
-<Files "*.php">
-    SetHandler application/x-httpd-php
-</Files>
+# Apache konfigurace pro statický web DaLin
 
 # Rewrite rules (volitelné)
 RewriteEngine On
@@ -30,4 +25,3 @@ RewriteBase /
     ExpiresByType application/javascript "access plus 1 month"
     ExpiresByType text/html "access plus 0 seconds"
 </IfModule>
-
