@@ -1,411 +1,78 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="cs">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Dalin - hlavní stránka" />
-    <title>Dalin | Úvod</title>
-    <link rel="stylesheet" href="/src/css/main.css" />
-    <script>
-      // Init dark mode BEFORE Alpine starts - must be inline script
-      (function () {
-        const darkMode = localStorage.getItem("darkMode") === "true";
-        if (darkMode) {
-          document.documentElement.classList.add("dark");
-        }
-      })();
-    </script>
-    <script type="module" src="/src/js/main.js"></script>
-  </head>
-  <body
-    class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-200"
-    x-data="{ darkMode: localStorage.getItem('darkMode') === 'true' }"
-    x-init="if (darkMode) document.documentElement.classList.add('dark'); else document.documentElement.classList.remove('dark')"
-  >
-    <!-- SITE_NAV:home -->
-
-    <!-- Hero Section -->
-    <section class="isolate py-10 lg:py-20">
-      <div class="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-        <div
-          class="absolute hidden lg:block pointer-events-none lg:-left-[11.8%] lg:top-[-30px] z-0 rotate-3"
-        >
-          <svg
-            width="50"
-            height="50"
-            version="1.1"
-            viewBox="0 0 5.2917 5.2917"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <g stroke-linecap="round" stroke-linejoin="round">
-              <g fill="none">
-                <g stroke="#27272a" stroke-width=".52917">
-                  <ellipse cx="2.1146" cy="3.0426" rx=".79375" ry=".79375" />
-                  <path d="m2.9084 3.0426v-1.5875" />
-                  <path d="m3.7021 1.4551v2.3812" />
-                </g>
-                <path
-                  d="m1.5468 0.38542a2.5135 2.5135 0 0 1 3.1525 0.81013 2.5135 2.5135 0 0 1-0.29016 3.2419 2.5135 2.5135 0 0 1-3.2462 0.23744 2.5135 2.5135 0 0 1-0.75879-3.1652"
-                  stroke="#fdc700"
-                  stroke-width=".26458"
-                />
-              </g>
-              <path
-                d="m0.52959 0.52909 1.3229 0.52917-0.79375 0.79375-0.52917-1.3229"
-                fill="#fdc700"
-                stroke="#fdc700"
-                stroke-width=".26458"
-              />
-            </g>
-          </svg>
-        </div>
-
-        <div
-          class="absolute hidden lg:block pointer-events-none lg:left-[108.4%] lg:top-[125px] z-0 -rotate-6"
-        >
-          <svg
-            width="50"
-            height="50"
-            version="1.1"
-            viewBox="0 0 5.2917 5.2917"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <g stroke-linecap="round" stroke-linejoin="round">
-              <g fill="none">
-                <g stroke="#27272a" stroke-width=".52917">
-                  <ellipse cx="2.1146" cy="3.0426" rx=".79375" ry=".79375" />
-                  <path d="m2.9084 3.0426v-1.5875" />
-                  <path d="m3.7021 1.4551v2.3812" />
-                </g>
-                <path
-                  d="m1.5468 0.38542a2.5135 2.5135 0 0 1 3.1525 0.81013 2.5135 2.5135 0 0 1-0.29016 3.2419 2.5135 2.5135 0 0 1-3.2462 0.23744 2.5135 2.5135 0 0 1-0.75879-3.1652"
-                  stroke="#fdc700"
-                  stroke-width=".26458"
-                />
-              </g>
-              <path
-                d="m0.52959 0.52909 1.3229 0.52917-0.79375 0.79375-0.52917-1.3229"
-                fill="#fdc700"
-                stroke="#fdc700"
-                stroke-width=".26458"
-              />
-            </g>
-          </svg>
-        </div>
-
-        <div class="text-center">
-          <div
-            class="sm:flex sm:max-w-fit sm:mx-auto sm:items-center sm:gap-1 mb-6"
-          >
-            <div
-              class="mb-2 sm:mb-0 flex mx-auto sm:mx-0 max-w-fit sm:max-w-full"
-            >
-              <svg
-                class="size-5 text-brand dark:text-brand-foreground"
-                fill="currentColor"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 576 512"
-              >
-                <!--! Font Awesome Pro 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2024 Fonticons, Inc. -->
-                <path
-                  d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"
-                ></path>
-              </svg>
-              <svg
-                class="size-5 text-brand dark:text-brand-foreground"
-                fill="currentColor"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 576 512"
-              >
-                <!--! Font Awesome Pro 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2024 Fonticons, Inc. -->
-                <path
-                  d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"
-                ></path>
-              </svg>
-              <svg
-                class="size-5 text-brand dark:text-brand-foreground"
-                fill="currentColor"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 576 512"
-              >
-                <!--! Font Awesome Pro 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2024 Fonticons, Inc. -->
-                <path
-                  d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"
-                ></path>
-              </svg>
-              <svg
-                class="size-5 text-brand dark:text-brand-foreground"
-                fill="currentColor"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 576 512"
-              >
-                <!--! Font Awesome Pro 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2024 Fonticons, Inc. -->
-                <path
-                  d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"
-                ></path>
-              </svg>
-              <svg
-                class="size-5 text-brand dark:text-brand-foreground"
-                fill="currentColor"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 576 512"
-              >
-                <!--! Font Awesome Pro 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2024 Fonticons, Inc. -->
-                <path
-                  d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"
-                ></path>
-              </svg>
-            </div>
-
-            <p
-              class="[:where(&amp;)]:text-sm [:where(&amp;)]:text-zinc-500 [:where(&amp;)]:dark:text-white/70 sm:ml-2 text-base text-center sm:text-left"
-              data-flux-text=""
-            >
-              <span class="font-semibold">10</span>/10 orientátků ABM
-              <a
-                class="inline font-medium underline-offset-[6px] hover:decoration-current underline [[data-color]&gt;&amp;]:text-inherit [[data-color]&gt;&amp;]:decoration-current/20 dark:[[data-color]&gt;&amp;]:decoration-current/50 [[data-color]&gt;&amp;]:hover:decoration-current text-[var(--color-accent-content)] decoration-[color-mix(in_oklab,var(--color-accent-content),transparent_80%)]"
-                target="_blank"
-                href="https://docs.dalin.cz/"
-                data-flux-link=""
-                >muselo přejít na tento projekt :-)</a
-              >
-            </p>
-          </div>
-
-          <p
-            class="text-4xl font-bold tracking-tight text-zinc-800 dark:text-white sm:text-6xl"
-          >
-            <span class="block">Ultimátní administrace</span>
-            <span
-              class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl bg-linear-to-br from-brand via-brand-foreground to-brand bg-clip-text text-transparent dark:from-brand-foreground dark:via-brand dark:to-brand-foreground"
-            >
-              pro vaše orientáky
-            </span>
-          </p>
-
-          <p
-            class="mt-6 text-lg leading-8 text-zinc-500 dark:text-white/70 text-balance"
-          >
-            Prozkoumejte možnosti členské sekce a používejte jí ve svmém klubu
-            také. Projekt je dostupné pod svobodnou licencí. Můžete jej používat
-            rozvíjet upravovat.
-          </p>
-
-          <button
-            type="button"
-            class="mt-10 py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-brand text-zinc-900 hover:bg-brand/90 focus:outline-hidden focus:bg-brand/90 focus-visible:ring-2 focus-visible:ring-brand/60 focus-visible:ring-offset-2 dark:focus-visible:ring-brand-foreground/50 dark:focus-visible:ring-offset-gray-900 disabled:opacity-50 disabled:pointer-events-none"
-          >
-            Ukázka členské sekce
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              class="lucide lucide-target-icon lucide-target"
-            >
-              <circle cx="12" cy="12" r="10" />
-              <circle cx="12" cy="12" r="6" />
-              <circle cx="12" cy="12" r="2" />
-            </svg>
-          </button>
-          <button
-            type="button"
-            class="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-2xs hover:bg-gray-50 focus:outline-hidden focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-700 dark:focus:bg-neutral-700"
-          >
-            Chci vědět více
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              class="lucide lucide-message-circle-question-mark-icon lucide-message-circle-question-mark"
-            >
-              <path
-                d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719"
-              />
-              <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
-              <path d="M12 17h.01" />
-            </svg>
-          </button>
-        </div>
-      </div>
-    </section>
-
-    <!-- Features Section -->
-    <section
-      class="relative overflow-hidden py-24 sm:py-16 border-t border-zinc-200 dark:border-zinc-700"
-    >
-      <div class="relative mx-auto max-w-7xl px-6 lg:px-8">
-        <div
-          class="absolute left-[80%] pointer-events-none lg:left-[43%] lg:top-[480px] z-0 rotate-2"
-        >
-          <svg
-            width="50"
-            height="50"
-            version="1.1"
-            viewBox="0 0 5.2917 5.2917"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <g stroke-linecap="round" stroke-linejoin="round">
-              <g fill="none">
-                <g stroke="#27272a" stroke-width=".52917">
-                  <ellipse cx="2.1146" cy="3.0426" rx=".79375" ry=".79375" />
-                  <path d="m2.9084 3.0426v-1.5875" />
-                  <path d="m3.7021 1.4551v2.3812" />
-                </g>
-                <path
-                  d="m1.5468 0.38542a2.5135 2.5135 0 0 1 3.1525 0.81013 2.5135 2.5135 0 0 1-0.29016 3.2419 2.5135 2.5135 0 0 1-3.2462 0.23744 2.5135 2.5135 0 0 1-0.75879-3.1652"
-                  stroke="#fdc700"
-                  stroke-width=".26458"
-                />
-              </g>
-              <path
-                d="m0.52959 0.52909 1.3229 0.52917-0.79375 0.79375-0.52917-1.3229"
-                fill="#fdc700"
-                stroke="#fdc700"
-                stroke-width=".26458"
-              />
-            </g>
-          </svg>
-        </div>
-        <div
-          class="absolute left-[45%] top-[610px] pointer-events-none lg:left-[-6%] lg:top-[70px] -rotate-15"
-        >
-          <svg
-            width="50"
-            height="50"
-            version="1.1"
-            viewBox="0 0 5.2917 5.2917"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <g stroke-linecap="round" stroke-linejoin="round">
-              <g fill="none">
-                <g stroke="#27272a" stroke-width=".52917">
-                  <ellipse cx="2.1146" cy="3.0426" rx=".79375" ry=".79375" />
-                  <path d="m2.9084 3.0426v-1.5875" />
-                  <path d="m3.7021 1.4551v2.3812" />
-                </g>
-                <path
-                  d="m1.5468 0.38542a2.5135 2.5135 0 0 1 3.1525 0.81013 2.5135 2.5135 0 0 1-0.29016 3.2419 2.5135 2.5135 0 0 1-3.2462 0.23744 2.5135 2.5135 0 0 1-0.75879-3.1652"
-                  stroke="#fdc700"
-                  stroke-width=".26458"
-                />
-              </g>
-              <path
-                d="m0.52959 0.52909 1.3229 0.52917-0.79375 0.79375-0.52917-1.3229"
-                fill="#fdc700"
-                stroke="#fdc700"
-                stroke-width=".26458"
-              />
-            </g>
-          </svg>
-        </div>
-        <div
-          class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2"
-        >
-          <div class="lg:pr-8 lg:pt-4 flex items-center">
-            <div class="lg:max-w-lg">
-              <div class="flex items-center gap-x-3">
-                <svg
-                  class="h-7 w-7"
-                  fill="currentColor"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 512 512"
-                >
-                  <!--! Font Awesome Pro 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2024 Fonticons, Inc. -->
-                  <path
-                    d="M352 320c88.4 0 160-71.6 160-160c0-15.3-2.2-30.1-6.2-44.2c-3.1-10.8-16.4-13.2-24.3-5.3l-76.8 76.8c-3 3-7.1 4.7-11.3 4.7H336c-8.8 0-16-7.2-16-16V118.6c0-4.2 1.7-8.3 4.7-11.3l76.8-76.8c7.9-7.9 5.4-21.2-5.3-24.3C382.1 2.2 367.3 0 352 0C263.6 0 192 71.6 192 160c0 19.1 3.4 37.5 9.5 54.5L19.9 396.1C7.2 408.8 0 426.1 0 444.1C0 481.6 30.4 512 67.9 512c18 0 35.3-7.2 48-19.9L297.5 310.5c17 6.2 35.4 9.5 54.5 9.5zM80 408a24 24 0 1 1 0 48 24 24 0 1 1 0-48z"
-                  ></path>
-                </svg>
-                <div class="font-semibold text-xl">správa</div>
-              </div>
-              <h2
-                class="mt-8 text-3xl sm:text-[40px] font-bold tracking-tight text-zinc-800 dark:text-white text-balance"
-              >
-                Ovládejte administraci jako profík
-              </h2>
-              <p
-                class="mt-6 text-lg leading-8 text-zinc-500 dark:text-white/70 text-balance"
-              >
-                Už žádné překážky pro členy klubu. S administrací si většinu
-                důležitích věcí uživatelé zvládnou sami.
-              </p>
-              <dl
-                class="mt-10 max-w-xl space-y-8 text-base leading-7 text-zinc-500 dark:text-white/70 lg:max-w-none"
-              >
-                <div class="relative pl-9 text-lg">
-                  <dt
-                    class="inline font-semibold text-zinc-800 dark:text-white"
-                  >
-                    <svg
-                      class="absolute left-1 top-1 h-5 w-5"
-                      fill="currentColor"
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 512 512"
-                    >
-                      <!--! Font Awesome Pro 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2024 Fonticons, Inc. -->
-                      <path
-                        d="M256 48a208 208 0 1 1 0 416 208 208 0 1 1 0-416zm0 464A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm32-400a32 32 0 1 0 -64 0 32 32 0 1 0 64 0zM256 408c30.9 0 56-25.1 56-56c0-14-5.1-26.8-13.7-36.6L366 161.7c5.3-12.1-.2-26.3-12.3-31.6s-26.3 .2-31.6 12.3L254.4 296c-30.2 .8-54.4 25.6-54.4 56c0 30.9 25.1 56 56 56zM192 160a32 32 0 1 0 -64 0 32 32 0 1 0 64 0zM112 288a32 32 0 1 0 0-64 32 32 0 1 0 0 64zm320-32a32 32 0 1 0 -64 0 32 32 0 1 0 64 0z"
-                      ></path>
-                    </svg>
-                    Automatizace.
-                  </dt>
-                  <dd class="inline">
-                    Spoustu věcí je automatizovaných, členové se sami přihlašují
-                    skrze API do ORISu.
-                  </dd>
-                </div>
-
-                <div class="relative pl-9 text-lg">
-                  <dt
-                    class="inline font-semibold text-zinc-800 dark:text-white"
-                  >
-                    <svg
-                      class="absolute left-1 top-1 h-5 w-5"
-                      fill="currentColor"
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 512 512"
-                    >
-                      <!--! Font Awesome Pro 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2024 Fonticons, Inc. -->
-                      <path
-                        d="M327.5 85.2c-4.5 1.7-7.5 6-7.5 10.8s3 9.1 7.5 10.8L384 128l21.2 56.5c1.7 4.5 6 7.5 10.8 7.5s9.1-3 10.8-7.5L448 128l56.5-21.2c4.5-1.7 7.5-6 7.5-10.8s-3-9.1-7.5-10.8L448 64 426.8 7.5C425.1 3 420.8 0 416 0s-9.1 3-10.8 7.5L384 64 327.5 85.2zM9.3 240C3.6 242.6 0 248.3 0 254.6s3.6 11.9 9.3 14.5L26.3 277l8.1 3.7 .6 .3 88.3 40.8L164.1 410l.3 .6 3.7 8.1 7.9 17.1c2.6 5.7 8.3 9.3 14.5 9.3s11.9-3.6 14.5-9.3l7.9-17.1 3.7-8.1 .3-.6 40.8-88.3L346 281l.6-.3 8.1-3.7 17.1-7.9c5.7-2.6 9.3-8.3 9.3-14.5s-3.6-11.9-9.3-14.5l-17.1-7.9-8.1-3.7-.6-.3-88.3-40.8L217 99.1l-.3-.6L213 90.3l-7.9-17.1c-2.6-5.7-8.3-9.3-14.5-9.3s-11.9 3.6-14.5 9.3l-7.9 17.1-3.7 8.1-.3 .6-40.8 88.3L35.1 228.1l-.6 .3-8.1 3.7L9.3 240zm83 14.5l51.2-23.6c10.4-4.8 18.7-13.1 23.5-23.5l23.6-51.2 23.6 51.2c4.8 10.4 13.1 18.7 23.5 23.5l51.2 23.6-51.2 23.6c-10.4 4.8-18.7 13.1-23.5 23.5l-23.6 51.2-23.6-51.2c-4.8-10.4-13.1-18.7-23.5-23.5L92.3 254.6zM384 384l-56.5 21.2c-4.5 1.7-7.5 6-7.5 10.8s3 9.1 7.5 10.8L384 448l21.2 56.5c1.7 4.5 6 7.5 10.8 7.5s9.1-3 10.8-7.5L448 448l56.5-21.2c4.5-1.7 7.5-6 7.5-10.8s-3-9.1-7.5-10.8L448 384l-21.2-56.5c-1.7-4.5-6-7.5-10.8-7.5s-9.1 3-10.8 7.5L384 384z"
-                      ></path>
-                    </svg>
-                    Připraveno na budoucnost.
-                  </dt>
-                  <dd class="inline">
-                    Projekt sleduje moderní trendy. Nabízíme API rozhranní,
-                    možnost komunikovat s AI skrze vlastní MCP server.
-                  </dd>
-                </div>
-              </dl>
-            </div>
-          </div>
-
-          <img
-            loading="lazy"
-            src="https://dalin.cz/images/dalin-races.png"
-            alt="Dalin - Přehled závodů"
-            class="z-10 w-[48rem] max-w-none rounded-t-xl shadow-2xl border border-zinc-200 sm:w-[52rem] -mb-72 md:-ml-4 lg:-ml-0"
-            width="832"
-            height="752.812"
-          />
-        </div>
-      </div>
-
-      <div class="mx-auto max-w-7xl px-6 lg:px-8 pt-16"></div>
-    </section>
-
-    <!-- SITE_FOOTER -->
-  </body>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="dalin sjednocuje přihlášky na závody, finance, kalendář a komunikaci orientačního oddílu. Poznejte možnosti, výhody i nároky na provoz.">
+  <meta name="theme-color" content="#202426">
+  <title>dalin — oddíl v pohybu, agenda pod kontrolou</title>
+  <link rel="stylesheet" href="/src/css/landing.css">
+  <script>try{document.documentElement.dataset.theme=localStorage.getItem('dalin-theme') || 'dark'}catch{document.documentElement.dataset.theme='dark'}</script>
+  <script type="module" src="/src/js/landing.js"></script>
+</head>
+<body>
+  <a class="skip" href="#obsah">Přeskočit na obsah</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="#uvod" aria-label="dalin, na úvod"><img class="logo-light" src="/images/dalin-logo-light.svg" alt="DaLin" width="350" height="120"><img class="logo-dark" src="/images/dalin-logo-dark.svg" alt="" width="350" height="120"></a>
+      <nav aria-label="Hlavní navigace" class="main-nav"><a href="#jak-funguje">Jak funguje</a><a href="#moznosti">Možnosti</a><a href="#pro-koho">Pro koho</a><a href="#rozhodnuti">Pro a proti</a><a href="https://discord.gg/nuH5XP2Um5" target="_blank" rel="noopener noreferrer">Komunita ↗</a></nav>
+      <div class="header-actions"><button class="theme-toggle" type="button" aria-label="Přepnout na světlý režim" title="Přepnout na světlý režim"><svg class="theme-sun" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg><svg class="theme-moon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"/></svg></button><a class="header-cta" href="https://demo.dalin.cz/admin/login" target="_blank" rel="noopener noreferrer">Otevřít demo <span aria-hidden="true">↗</span></a></div>
+    </div>
+  </header>
+  <main id="obsah">
+    <section id="uvod" class="hero"><div class="wrap hero-grid"><div class="hero-copy"><p class="eyebrow"><span class="eyebrow-line"></span> INFORMAČNÍ SYSTÉM PRO ORIENTAČNÍ ODDÍLY</p><h1>Víc času v lese.<br><em>Míň času v tabulkách.</em></h1><p class="lead">Přihlášky, závody, členské finance i oddílové novinky na jednom místě. Dalin propojuje každodenní chod klubu s ORISem a dává členům i správcům jasný přehled.</p><div class="hero-actions"><a class="btn btn-primary" href="https://demo.dalin.cz/" target="_blank" rel="noopener noreferrer">Prohlédnout demo <span aria-hidden="true">↗</span></a><a class="btn btn-text" href="#jak-funguje">Zjistit, jak funguje <span aria-hidden="true">↓</span></a></div><a class="community-link" href="https://discord.gg/nuH5XP2Um5" target="_blank" rel="noopener noreferrer">Přidejte se do komunity na Discordu <span aria-hidden="true">↗</span></a><div class="hero-meta"><span><svg class="lucide-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 16 4-4-4-4" />
+  <path d="m6 8-4 4 4 4" />
+  <path d="m14.5 4-5 16" /></svg> Open source</span><span><svg class="lucide-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8" />
+  <path d="M21 3v5h-5" />
+  <path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16" />
+  <path d="M8 16H3v5" /></svg> Napojený na ORIS</span><span><svg class="lucide-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z" />
+  <path d="m9 12 2 2 4-4" /></svg> Ověřený v ABM Brno</span></div></div><div class="hero-visual"><div class="visual-orbit orbit-one"></div><div class="visual-orbit orbit-two"></div><div class="screenshot-card"><div class="window-top"><span class="window-dots"><b></b><b></b><b></b></span><span>dalin / Závody a události</span><span class="window-arrow">↗</span></div><img class="races-dark" src="/images/dalin-races-dark.png" alt="Ukázka přehledu závodů v aplikaci DaLin v tmavém režimu" width="3838" height="2153"><img class="races-light" src="/images/dalin-races-light.png" alt="Ukázka přehledu závodů v aplikaci DaLin ve světlém režimu" width="3838" height="2153"></div><div class="floating-note"><span class="note-symbol"><svg class="lucide-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="7" height="9" x="3" y="3" rx="1" />
+  <rect width="7" height="5" x="14" y="3" rx="1" />
+  <rect width="7" height="9" x="14" y="12" rx="1" />
+  <rect width="7" height="5" x="3" y="16" rx="1" /></svg></span><div><strong>Všechno pohromadě</strong><small>Od kalendáře po členské konto</small></div></div></div></div><div class="hero-bottom wrap"><span>01 / ÚVOD</span><span>POSUŇTE SE DÁL <span aria-hidden="true">↓</span></span></div></section>
+    <section id="jak-funguje" class="section intro"><div class="wrap"><div class="section-heading split"><div><p class="eyebrow">JEDEN ODDÍL. JEDNO MÍSTO.</p><h2>Co je vlastně <em>dalin?</em></h2></div><p>Oddílový informační systém pro orientační běh. Pomáhá členům plánovat závody a správcům zvládat agendu, která by jinak končila v e-mailech, tabulkách a bankovních výpisech.</p></div><div class="flow"><article><span class="step">01</span><div class="flow-icon"><svg class="lucide-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4" />
+  <path d="M16 2v4" />
+  <rect width="18" height="18" x="3" y="4" rx="2" />
+  <path d="M3 10h18" />
+  <path d="M8 14h.01" />
+  <path d="M12 14h.01" />
+  <path d="M16 14h.01" />
+  <path d="M8 18h.01" />
+  <path d="M12 18h.01" />
+  <path d="M16 18h.01" /></svg></div><h3>Najděte závod</h3><p>Kalendář a údaje o závodech se průběžně propojují s ORISem. Vidíte termíny i uzávěrky.</p></article><span class="flow-join" aria-hidden="true">→</span><article><span class="step">02</span><div class="flow-icon"><svg class="lucide-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="8" height="4" x="8" y="2" rx="1" ry="1" />
+  <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" />
+  <path d="m9 14 2 2 4-4" /></svg></div><h3>Přihlaste se</h3><p>Člen si vybere kategorii a přihlášku odešle v klubovém prostředí. dalin ji předá do ORISu.</p></article><span class="flow-join" aria-hidden="true">→</span><article><span class="step">03</span><div class="flow-icon"><svg class="lucide-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1" />
+  <path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4" /></svg></div><h3>Mějte přehled</h3><p>Startovné se promítne do členského konta. Klub i závodník vidí, co je potřeba vyřídit.</p></article></div></div></section>
+    <section id="moznosti" class="section features"><div class="wrap"><div class="section-heading"><p class="eyebrow">VŠE POD JEDNOU STŘECHOU</p><h2>Klub běží lépe,<br><em>když věci navazují.</em></h2><p>dalin propojuje to, co oddíl řeší každý týden. Každá část má své místo, ale údaje mezi nimi nemusíte přepisovat ručně.</p></div><div class="feature-grid"><article class="feature-card feature-main"><div class="feature-icon"><svg class="lucide-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4" />
+  <path d="M16 2v4" />
+  <rect width="18" height="18" x="3" y="4" rx="2" />
+  <path d="M3 10h18" />
+  <path d="m9 16 2 2 4-4" /></svg></div><div><span class="card-no">01 / ZÁVODY</span><h3>Přihlášky bez přeposílání</h3><p>Členové se přihlašují sami. Správce sleduje uzávěrky, změny a seznamy přihlášených v návaznosti na ORIS.</p></div><div class="mini-ui"><div class="mini-ui-head"><span>Nejbližší závody</span><span>● ● ●</span></div><div><b>Jihomoravská liga</b><span>Otevřené přihlášky <strong>↗</strong></span></div><div><b>Oddílový přebor</b><span>Uzávěrka za 5 dní <strong>↗</strong></span></div></div></article><article class="feature-card"><div class="feature-icon"><svg class="lucide-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1" />
+  <path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4" /></svg></div><span class="card-no">02 / FINANCE</span><h3>Klubové konto pod kontrolou</h3><p>Startovné se účtuje členům, příchozí platby se mohou párovat z banky a každý vidí svou historii.</p></article><article class="feature-card"><div class="feature-icon"><svg class="lucide-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 14v2.2l1.6 1" />
+  <path d="M16 2v4" />
+  <path d="M21 7.5V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h3.5" />
+  <path d="M3 10h5" />
+  <path d="M8 2v4" />
+  <circle cx="16" cy="16" r="6" /></svg></div><span class="card-no">03 / KALENDÁŘ</span><h3>Termíny, které neutečou</h3><p>Závody a klubové akce na jednom místě, osobní iCal odběr a e-mailová upozornění na uzávěrky.</p></article><article class="feature-card"><div class="feature-icon"><svg class="lucide-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21 8-2 2-1.5-3.7A2 2 0 0 0 15.646 5H8.4a2 2 0 0 0-1.903 1.257L5 10 3 8" />
+  <path d="M7 14h.01" />
+  <path d="M17 14h.01" />
+  <rect width="18" height="8" x="3" y="10" rx="2" />
+  <path d="M5 18v2" />
+  <path d="M19 18v2" /></svg></div><span class="card-no">04 / SPOLUJÍZDA</span><h3>Společně i na cestě</h3><p>Členové mohou nabídnout místo v autě nebo požádat o odvoz na konkrétní závod.</p></article><article class="feature-card"><div class="feature-icon"><svg class="lucide-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18h-5" />
+  <path d="M18 14h-8" />
+  <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-4 0v-9a2 2 0 0 1 2-2h2" />
+  <rect width="8" height="4" x="10" y="6" rx="1" /></svg></div><span class="card-no">05 / OBSAH A SPRÁVA</span><h3>Živý oddílový web</h3><p>Novinky, stránky, členská sekce, správa rolí i jednoduchý interní obchod pro klubové vybavení.</p></article></div><a class="inline-link" href="https://docs.dalin.cz/" target="_blank" rel="noopener noreferrer">Prozkoumat všechny možnosti v dokumentaci <span aria-hidden="true">↗</span></a></div></section>
+    <section id="pro-koho" class="section audience"><div class="wrap audience-grid"><div><p class="eyebrow">PRO LIDI V ODDÍLE</p><h2>Každý vidí<br><em>to svoje.</em></h2><p>Dalin dává jednotlivým rolím nástroje, které potřebují. Závodník se soustředí na závod. Správce na chod klubu.</p><a class="inline-link" href="https://abmbrno.cz/" target="_blank" rel="noopener noreferrer">Podívat se na nasazení v ABM Brno <span aria-hidden="true">↗</span></a></div><div class="audience-list"><article><span>01</span><div><h3><svg class="lucide-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="5" />
+  <path d="M20 21a8 8 0 0 0-16 0" /></svg>Členové a závodníci</h3><p>Přihlášky, vlastní kalendář, konto, notifikace a domluva dopravy.</p></div><b aria-hidden="true">↗</b></article><article><span>02</span><div><h3><svg class="lucide-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 21a8 8 0 0 0-16 0" />
+  <circle cx="10" cy="8" r="5" />
+  <path d="M22 20c0-3.37-2-6.5-4-8a5 5 0 0 0-.45-8.3" /></svg>Správci závodů a klubu</h3><p>Import akcí, přehled přihlášek, členové, role, obsah a exporty.</p></div><b aria-hidden="true">↗</b></article><article><span>03</span><div><h3><svg class="lucide-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="5" rx="2" />
+  <line x1="2" x2="22" y1="10" y2="10" /></svg>Kluboví finančníci</h3><p>Platby, členská konta, párování transakcí a vyúčtování.</p></div><b aria-hidden="true">↗</b></article></div></div></section>
+    <section id="rozhodnuti" class="section decision"><div class="wrap"><div class="section-heading split"><div><p class="eyebrow">FÉROVÝ POHLED</p><h2>Hodí se <em>pro váš oddíl?</em></h2></div><p>Silné stránky i praktické nároky je dobré znát předem. Dalin je otevřený projekt, který můžete přizpůsobit vlastnímu klubu.</p></div><div class="pros-cons"><article class="pros"><div class="list-title"><span><svg class="lucide-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10" />
+  <path d="m9 12 2 2 4-4" /></svg></span><h3>Co získáte</h3></div><ul><li>Méně ruční práce kolem závodů a přihlášek</li><li>Propojení s ORISem a přehled o členských financích</li><li>Jedno místo pro členy, správce i klubový obsah</li><li>Otevřený zdrojový kód pod licencí MIT</li></ul></article><article class="cons"><div class="list-title"><span><svg class="lucide-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3" />
+  <path d="M12 9v4" />
+  <path d="M12 17h.01" /></svg></span><h3>S čím počítat</h3></div><ul><li>Vlastní nasazení vyžaduje správu serveru a databáze</li><li>Integrace jsou navázané na služby jako ORIS a podporované banky</li><li>Počáteční nastavení členů, rolí a klubových pravidel zabere čas</li><li>Klub potřebuje člověka, který bude systém průběžně spravovat</li></ul></article></div></div></section>
+    <section class="closing"><div class="wrap closing-inner"><div><p class="eyebrow">VYDEJTE SE PODÍVAT</p><h2>Nejlepší přehled získáte,<br><em>když si dalin projdete.</em></h2><p>Otevřete ukázkovou instalaci, projděte dokumentaci nebo se podívejte pod kapotu projektu.</p></div><div class="closing-actions"><a class="btn btn-dark" href="https://demo.dalin.cz/" target="_blank" rel="noopener noreferrer">Spustit demo <span aria-hidden="true">↗</span></a><a href="https://docs.dalin.cz/" target="_blank" rel="noopener noreferrer">Číst dokumentaci ↗</a><a href="https://github.com/jZejda/dalin" target="_blank" rel="noopener noreferrer">Zdrojový kód ↗</a></div></div></section>
+  </main>
+  <footer class="site-footer"><div class="wrap footer-inner"><a class="brand" href="#uvod"><img class="logo-light" src="/images/dalin-logo-light.svg" alt="DaLin" width="350" height="120"><img class="logo-dark" src="/images/dalin-logo-dark.svg" alt="" width="350" height="120"></a><p>Pro oddíly, které raději běhají než přepisují tabulky.</p><div><a href="https://docs.dalin.cz/" target="_blank" rel="noopener noreferrer">Dokumentace</a><a href="https://github.com/jZejda/dalin" target="_blank" rel="noopener noreferrer">GitHub</a><a href="https://abmbrno.cz/" target="_blank" rel="noopener noreferrer">ABM Brno</a><a href="https://discord.gg/nuH5XP2Um5" target="_blank" rel="noopener noreferrer">Discord</a></div></div></footer>
+</body>
 </html>
