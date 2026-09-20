@@ -20,3 +20,15 @@
 .hero-meta{font-size:14px;gap:14px 22px}.hero-meta i{width:7px;height:7px;margin-right:7px}.card-no{font-size:13px;letter-spacing:.11em}
 @media(max-width:500px){.hero-meta{font-size:13px;gap:10px 16px}.card-no{font-size:12px}}
 .screenshot-card .races-light{display:block}.screenshot-card .races-dark{display:none}:root[data-theme=dark] .screenshot-card .races-light{display:none}:root[data-theme=dark] .screenshot-card .races-dark{display:block}
+/* Larger reading type; H1 and H2 sizes stay as designed. */
+body{font-size:18px}
+.main-nav{font-size:15px}.theme-toggle{font-size:14px}.header-cta{font-size:14px}
+.eyebrow{font-size:13px}.lead{font-size:19px}.btn{font-size:15px}.hero-meta{font-size:16px}.hero-bottom{font-size:12px}
+.window-top{font-size:12px}.floating-note strong{font-size:13px}.floating-note small{font-size:12px}
+.step{font-size:12px}.card-no{font-size:15px}.flow h3{font-size:22px}.flow p,.feature-card p,.audience-list p{font-size:16px}
+.feature-card h3{font-size:22px}.feature-main h3{font-size:32px}.feature-main p{font-size:16px}.mini-ui{font-size:13px}.inline-link{font-size:15px}
+.audience-list article>span{font-size:13px}.audience-list h3{font-size:21px}.pros-cons li{font-size:16px}.closing-actions{font-size:15px}.footer-inner p,.footer-inner>div{font-size:13px}
+@media(max-width:760px){.lead{font-size:17px}.header-cta{font-size:13px}}
+@media(max-width:500px){.hero-meta{font-size:15px}.card-no{font-size:14px}.hero-bottom{font-size:11px}}
+/* Lucide icons keep a consistent stroke and follow each section's text color. */
+.lucide-icon{display:block;width:22px;height:22px;flex:none}.flow-icon .lucide-icon,.feature-icon .lucide-icon{width:25px;height:25px}.hero-meta span{display:inline-flex;align-items:center;gap:8px}.hero-meta .lucide-icon{width:17px;height:17px;color:var(--accent)}:root:not([data-theme=dark]) .hero-meta .lucide-icon{color:var(--text)}.note-symbol .lucide-icon{width:20px;height:20px}.list-title .lucide-icon{width:20px;height:20px}.audience-list h3{display:flex;align-items:center;gap:10px}.audience-list h3 .lucide-icon{width:19px;height:19px;color:var(--accent)}
